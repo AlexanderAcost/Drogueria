@@ -1,0 +1,24 @@
+footer{
+    background-color:#140b29;
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(235, 220, 220);
+    padding: 15px;
+    bottom: 0;
+    width: 100%;    
+}
+* {
+    margin: 0;
+  }
+html, body {
+    height: 100%;
+  }
+.wrapper {
+    min-height: calc(100% - 4rem);
+  }
+.scroll {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+
