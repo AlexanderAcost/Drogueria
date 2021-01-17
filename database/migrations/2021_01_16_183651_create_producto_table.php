@@ -23,6 +23,7 @@ class CreateProductoTable extends Migration
             $table->string('Presentacionpro',50);
             $table->integer('Cantidadpro');
             $table->float('Preciopro');  
+            $table->string('fotopro',50);
 
             $table->foreign('Idcat')->references('Idcategoria')->on('categoria');
 

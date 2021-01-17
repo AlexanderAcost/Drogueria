@@ -15,5 +15,22 @@ class facturaSeeder extends Seeder
     public function run()
     {
         //
+        $facturas=[
+            //[
+              //  'NombreComoEstaEnLaTabla'=>'ValorQueQuieroAsignar'
+            // ],
+            ['Idprove'=>'1',
+             'Fechafac'=>'2020-01-01',
+             'Totalfac'=>'255000'
+            ],
+            ['Idprove'=>'2',
+             'Fechafac'=>'2020-01-02',
+             'Totalfac'=>'290000'
+            ]
+            
+           
+        ];
+        DB::table('factura')->insert($facturas);
+
     }
 }

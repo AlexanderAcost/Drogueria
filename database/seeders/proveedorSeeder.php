@@ -19,27 +19,20 @@ class proveedorSeeder extends Seeder
             //[
               //  'NombreComoEstaEnLaTabla'=>'ValorQueQuieroAsignar'
             // ],
-            ['title'=>'Adios',
-             'year'=>'2020',
-             'director'=>'juan',   
-             'poster'=>'adios.jpg',
-             'synopsis'=>'Pelicula drama'
+            ['Nombreprove'=>'Andres',
+             'Direccionprove'=>'Pasto',
+             'Correoprove'=>'andres@gmail.com',   
+             'Telefonoprove'=>'3101234567'            
             ],
-            ['title'=> 'Marvel',
-             'year'=>'2019',
-             'director'=> 'alex',
-             'poster'=> 'marvel.jpg',
-             'synopsis'=> 'pelicula accion'
+            ['Nombreprove'=>'Juan',
+             'Direccionprove'=>'Cali',
+             'Correoprove'=>'juan@gmail.com',   
+             'Telefonoprove'=>'3101234568'            
             ],
-            ['title'=> 'quito',
-             'year'=>'2018',
-             'director'=> 'perez',
-             'poster'=> 'quito.jpg',
-             'synopsis'=> 'pelicula belica'
-            ]
+           
            
         ];
-        DB::table('movies')->insert($movies);
+        DB::table('proveedor')->insert($proveedores);
 
 
     }
