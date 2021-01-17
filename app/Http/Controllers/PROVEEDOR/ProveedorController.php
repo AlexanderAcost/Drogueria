@@ -5,6 +5,9 @@ namespace App\Http\Controllers\PROVEEDOR;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+//Para hacer las consultas
+use Illuminate\Support\Facades\DB;
+
 class ProveedorController extends Controller
 {
     //
@@ -15,7 +18,8 @@ class ProveedorController extends Controller
         return view('v');
     }
     public function listaproveedor(){
-        return view('proveedor.vlistaproveedor');
+        $proveedores=DB::table('proveedor')->get(); 
+        return view('proveedor.vlistaproveedor', ['proveedores' => $proveedores]);
     }
     public function formbuscar(){
         return view('proveedor.vformbuscar');

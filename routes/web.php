@@ -29,7 +29,7 @@ Route::get('/',[HomeController::class, 'raiz']);
 Route::get('producto/formregistro',[ProductoController::class, 'formproducto']);
 Route::POST('producto/registro',[ProductoController::class, 'registro']);
 
-Route::get('producto/lista',[ProductoController::class, 'listaproducto']);
+Route::get('producto/lista',[ProductoController::class, 'listaproducto']);  //Lista
 //Route::get('producto/visualizar',[ProductoController::class, 'showClientes']);
 
 Route::get('producto/buscar',[ProductoController::class, 'formbuscar']);
