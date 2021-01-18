@@ -32,7 +32,7 @@ class productoSeeder extends Seeder
              'Nombrepro'=>'Loratadina_5Mg',
              'Descripcionpro'=>'Jarabe Frasco X100Ml.',   
              'Marcapro'=>'Genfar',
-             'Presentacionpro'=>'Jarabe',
+             'Presentacionpro'=>'jarabe',
              'Cantidadpro'=>'20',
              'Preciopro'=>'10000',
              'fotopro'=>'Loratadina_5Mg.jpg'

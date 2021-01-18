@@ -16,15 +16,27 @@ class ProductoController extends Controller
 {
     //
     public function formproducto(){
-        return view('producto.vformregistro');
+        $categorias = DB::table('categoria')->get();
+        return view('producto.vformregistro', ['categorias' => $categorias]);
     }
-    public function registro(){
-        return view('v');
+    public function registro(Request $request){
+        $producto = new Mproducto();
+        $producto->idcat = $request->input('categoria');
+        $producto->Nombrepro = $request->input('nompro');
+        $producto->Descripcionpro = $request->input('descripcionpro');
+        $producto->Marcapro = $request->input('marcapro');
+        $producto->Presentacionpro = $request->input('prespro');
+        $producto->Cantidadpro = $request->input('cantidad');
+        $producto->Preciopro = $request->input('precio');
+        $producto->fotopro = $request->input('foto');
+        $producto->save();
+        return redirect('producto/lista');
     }
     public function listaproducto(){
         $productos = DB::table('producto as pro')
                     ->join('categoria as cat', 'pro.Idcat', '=', 'cat.Idcategoria')
                     ->select('pro.Idproducto','pro.Nombrepro', 'pro.Marcapro','pro.Presentacionpro','pro.Cantidadpro','pro.Preciopro', 'cat.Nombrecat')
+                    ->orderBy('Idproducto', 'asc')
                     ->get();
         return view('producto.vlistaproducto', ['productos' => $productos]);
         

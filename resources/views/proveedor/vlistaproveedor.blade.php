@@ -18,10 +18,10 @@
                     <td>{{$p->Nombreprove}}</td>
                     <td>
                         <p >
-                            <a class="btn btn-primary " data-toggle="collapse" href="#c{{$p->Idproveedor}}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Más</a>     
+                            <a class="btn btn-primary btn-block" data-toggle="collapse" href="#c{{$p->Idproveedor}}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Más</a>     
                         </p>                        
-                        <div class="container ">
-                            <div class="collapse multi-collapse" id="c{{$p->Idproveedor}}">
+                        <div class="col-md-offset-11 ">
+                            <div class="collapse multi-collapse col-md-offset-7" id="c{{$p->Idproveedor}}">
                                 <div class="card card-body " >
                                     <h6 style="color: black;">Dirección: {{$p->Direccionprove}}</h6>
                                     <h6 style="color: black;">Correo: {{$p->Correoprove}}</h6>

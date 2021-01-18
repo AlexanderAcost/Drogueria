@@ -26,7 +26,7 @@ Route::get('/',[HomeController::class, 'raiz']);
 //Admin
 
 //Productos
-Route::get('producto/formregistro',[ProductoController::class, 'formproducto']);
+Route::get('producto/formregistro',[ProductoController::class, 'formproducto']);//Lista
 Route::POST('producto/registro',[ProductoController::class, 'registro']);
 
 Route::get('producto/lista',[ProductoController::class, 'listaproducto']);  //Lista
@@ -42,7 +42,7 @@ Route::post('producto/actualizar/{id}', [ProductoController::class, 'actualizar'
 Route::get('proveedor/formregistro',[ProveedorController::class, 'formproveedor']);
 Route::POST('proveedor/registro',[ProveedorController::class, 'registro']);
 
-Route::get('proveedor/lista',[ProveedorController::class, 'listaproveedor']);
+Route::get('proveedor/lista',[ProveedorController::class, 'listaproveedor']);//lista
 //Route::get('proveedor/visualizar',[ProveedorController::class, 'showClientes']);
 
 Route::get('proveedor/buscar',[ProveedorController::class, 'formbuscar']);
@@ -55,9 +55,9 @@ Route::post('proveedor/actualizar/{id}', [ProveedorController::class, 'actualiza
 //FActura
 
 Route::get('factura/formregistro',[FacturaController::class, 'formfactura']);
-Route::POST('Factura/registro',[FacturaController::class, 'registro']);
+Route::POST('factura/registro',[FacturaController::class, 'registro']);
 
-Route::get('factura/lista',[FacturaController::class, 'listafactura']);
+Route::get('factura/lista',[FacturaController::class, 'listafactura']);//lista
 //Route::get('Factura/visualizar',[FacturaController::class, 'showClientes']);
 
 Route::get('factura/buscar',[FacturaController::class, 'formbuscar']);
@@ -65,3 +65,6 @@ Route::POST('factura/buscar',[FacturaController::class, 'buscar']);
 
 Route::get('factura/actualizar/{id}', [FacturaController::class, 'formactualizar']);
 Route::post('factura/actualizar/{id}', [FacturaController::class, 'actualizar']);
+
+//Items
+Route::get('item/lista/{idfac}',[ItemController::class, 'listaitem']);

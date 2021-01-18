@@ -1,5 +1,5 @@
 function alerta(){
-    if(confirm("Confirme Para Guardar")){
+    if(confirm("Confirme Para Registrar")){
         return true;
     }else{
         return false;
