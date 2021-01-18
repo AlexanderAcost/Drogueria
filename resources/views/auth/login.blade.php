@@ -45,7 +45,8 @@
                                             <div class="group"> <label for="name" class="label">Nombre</label> <input id="name" name="name" type="text" class="input" placeholder="Crea Un Nombre de Usuario"> </div>
                                             <div class="group"> <label for="email" class="label">Email</label> <input id="email" name="email" type="email" class="input"  placeholder="Ingresa tu Correo"> </div>
                                             <div class="group"> <label for="password" class="label">Contraseña</label> <input id="password" name="password" type="password" class="input" data-type="password" placeholder="contraseña"> </div>
-                                            <div class="group"> <label for="password_confirmation" class="label">Confirmar Contraseña</label> <input id="password_confirmation" name="password_confirmation" type="password" data-type="password" class="input" placeholder="Confirmar Contraseña"> </div>
+                                            <div class="group"> <label for="password_confirmation" class="label">Confirmar Contraseña</label> <input  id="password_confirmation" name="password_confirmation" type="password" data-type="password" class="input" placeholder="Confirmar Contraseña"> </div>
+                                            <div class="group"> <label for="tipo" class="label">Tipo</label> <input disabled id="tipo" name="tipo" type="text" class="input"  value="1"> </div>
                                             <div class="group"> <input type="submit" class="button" value="Crear Cuenta"> </div>
                                             <div class="hr"></div>
                                             <div class="foot"> <label for="tab-1">Ya tienes cuenta?</label> </div>
