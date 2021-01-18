@@ -8,7 +8,7 @@
 
         <!-- CARGA CSS -->
         <link href="{{ url('/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ url('/bootstrap/estilos.css') }}" rel="stylesheet"> 
+        <link href="{{ url('/estilos.css') }}" rel="stylesheet"> 
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
