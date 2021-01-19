@@ -41,8 +41,8 @@ Route::POST('producto/registro',[ProductoController::class, 'registro'])->middle
 Route::get('producto/lista',[ProductoController::class, 'listaproducto'])->middleware('auth');  //Lista
 //Route::get('producto/visualizar',[ProductoController::class, 'showClientes']);
 
-Route::get('producto/buscar',[ProductoController::class, 'formbuscar'])->middleware('auth');
-Route::POST('producto/buscar',[ProductoController::class, 'buscar'])->middleware('auth');
+Route::get('producto/buscar',[ProductoController::class, 'formbuscar']);
+Route::POST('producto/buscar/',[ProductoController::class, 'buscar'])->middleware('auth');
 
 Route::get('producto/actualizar/{id}', [ProductoController::class, 'formactualizar'])->middleware('auth');
 Route::post('producto/actualizar/{id}', [ProductoController::class, 'actualizar'])->middleware('auth');

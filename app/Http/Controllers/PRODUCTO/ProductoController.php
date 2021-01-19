@@ -43,9 +43,16 @@ class ProductoController extends Controller
     }
     public function formbuscar(){
         return view('producto.vformbuscar');
+        
     }
-    public function buscar(){
-        return view('v');
+    public function buscar(Request $request){
+        $nombre = $request->input('nompro');
+       $producto = Mproducto::where('nompro', 'like',$nombre)->first();
+       if($producto)
+            return view('producto.vresbuscar', compact('producto'));
+        else
+            return view('producto.vvacio');
+        
     }
     public function formactualizar(){
         return view('producto.vformactualizar');

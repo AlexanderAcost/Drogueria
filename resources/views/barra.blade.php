@@ -16,7 +16,7 @@
           <a class="dropdown-item" href="{{url('producto/lista')}}">Listar</a>
           <a class="dropdown-item" href="{{url('producto/buscar')}}">Buscar</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -28,7 +28,7 @@
           <a class="dropdown-item" href="{{url('proveedor/lista')}}">Listar</a>
           <a class="dropdown-item" href="{{url('proveedor/buscar')}}">Buscar</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -40,7 +40,7 @@
           <a class="dropdown-item" href="{{url('factura/lista')}}">Listar</a>
           <a class="dropdown-item" href="{{url('factura/buscar')}}">Buscar</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+        
         </div>
       </li>
 

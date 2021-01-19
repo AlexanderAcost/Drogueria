@@ -16,7 +16,7 @@
         
         
     </head>
-    <body class="antialiased">
+    <body class="antialiased" back>
         @include('barra')
         <div class="wrapper">
             @yield('contenido')

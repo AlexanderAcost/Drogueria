@@ -2,7 +2,7 @@
 @extends('master')
 @section('contenido') 
     <br>
-    <h1 class="text-center">Formulario de registro FActura</h1>
+    <h1 class="text-center">Formulario de registro Factura</h1>
 
     <div class="container">
         <form action="{{url('factura/registro')}}" method="POST" >
