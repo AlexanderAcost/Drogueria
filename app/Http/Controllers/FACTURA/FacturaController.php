@@ -8,16 +8,25 @@ use Illuminate\Http\Request;
 //Para hacer las consultas
 use Illuminate\Support\Facades\DB;
 
-use App\Model\MHabitaciones;
+//Para hacer  posible  registro
+use App\Models\Mproveedor;
+use App\Models\Mfactura;
+
 
 class FacturaController extends Controller
 {
     //
     public function formfactura(){
-        return view('factura.vformregistro');
+        $proveedores = DB::table('proveedor')->get();
+        return view('factura.vformregistro', ['proveedores' => $proveedores]);       
     }
     public function registro(Request $request){
-        return view('v');
+        $fecha = new Mfactura();
+        $fecha->Idprove  = $request->input('proveedor');
+        $fecha->Fechafac = $request->input('fecha');
+        $fecha->Totalfac = $request->input('total');
+        $fecha->save();
+        return redirect('factura/lista');
     }
     public function listafactura(){    
         $facturas = DB::table('factura as fac')

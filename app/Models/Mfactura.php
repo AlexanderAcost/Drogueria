@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Mfactura extends Model
 {
     use HasFactory;
+    protected $table='factura';
 }

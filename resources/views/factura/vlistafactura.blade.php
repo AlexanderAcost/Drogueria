@@ -1,7 +1,7 @@
 @extends('master')
 @section('contenido') 
     <br>
-    <h1>Lista de FActura</h1>
+    <h1 class="text-center">Lista de Facturas</h1>
 
 <div class="container">
 

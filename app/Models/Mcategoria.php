@@ -10,4 +10,5 @@ class Mcategoria extends Model
     use HasFactory;
     protected $table='categoria';
     
+    
 }

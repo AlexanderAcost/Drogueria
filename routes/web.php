@@ -35,7 +35,7 @@ require __DIR__.'/auth.php';
 
 //Productos
 Route::get('producto/formregistro',[ProductoController::class, 'formproducto'])->middleware('auth');//Lista
-Route::POST('producto/registro',[ProductoController::class, 'registro'])->middleware('auth');
+Route::POST('producto/registro',[ProductoController::class, 'registro'])->middleware('auth');//Lista
 
 
 Route::get('producto/lista',[ProductoController::class, 'listaproducto'])->middleware('auth');  //Lista
@@ -48,8 +48,8 @@ Route::get('producto/actualizar/{id}', [ProductoController::class, 'formactualiz
 Route::post('producto/actualizar/{id}', [ProductoController::class, 'actualizar'])->middleware('auth');
 
 //Proveedores
-Route::get('proveedor/formregistro',[ProveedorController::class, 'formproveedor'])->middleware('auth');
-Route::POST('proveedor/registro',[ProveedorController::class, 'registro'])->middleware('auth');
+Route::get('proveedor/formregistro',[ProveedorController::class, 'formproveedor'])->middleware('auth');//Lista
+Route::POST('proveedor/registro',[ProveedorController::class, 'registro'])->middleware('auth');//Lista
 
 Route::get('proveedor/lista',[ProveedorController::class, 'listaproveedor'])->middleware('auth');//lista
 //Route::get('proveedor/visualizar',[ProveedorController::class, 'showClientes']);

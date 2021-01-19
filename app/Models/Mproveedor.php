@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Mproveedor extends Model
 {
     use HasFactory;
+    protected $table='proveedor';
 }
