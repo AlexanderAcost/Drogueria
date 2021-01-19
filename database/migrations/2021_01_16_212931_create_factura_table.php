@@ -15,7 +15,7 @@ class CreateFacturaTable extends Migration
     {
         Schema::create('factura', function (Blueprint $table) {
 
-           $table->bigIncrements('Idfactura'); 
+            $table->bigIncrements('Idfactura'); 
             $table->unsignedBigInteger('Idprove'); 
             $table->date('Fechafac');                    
             $table->float('Totalfac'); 
