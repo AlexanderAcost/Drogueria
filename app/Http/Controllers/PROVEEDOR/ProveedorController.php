@@ -35,13 +35,35 @@ class ProveedorController extends Controller
     public function formbuscar(){
         return view('proveedor.vformbuscar');
     }
-    public function buscar(){
-        return view('v');
+    public function buscar(Request $request){
+        $nombre = $request->input('consultaPro');
+        $proveedor = Mproveedor::where('Nombreprove', 'like',$nombre)->first();
+        if($proveedor)
+            
+            return view('proveedor.vresbuscar', ['proveedor' => $proveedor]);
+        else
+            return view('proveedor.vvacio');
+        
     }
-    public function formactualizar(){
-        return view('proveedor.vformactualizar');
+    public function formactualizar($Idproveedor){
+        $proveedor = Mproveedor::findOrFail($Idproveedor);
+        
+        return view('proveedor.vformactualizar', compact('proveedor'));
     }
-    public function actualizar(){
-        return view('v');
+    public function actualizar(Request $request, $Idproveedor){
+        $proveedores = Mproveedor::findOrFail($Idproveedor);
+        $proveedores->Nombreprove = $request->input('nomprove');
+        $proveedores->Direccionprove = $request->input('direccionprove');
+        $proveedores->Correoprove = $request->input('correoprove');
+        $proveedores->Telefonoprove = $request->input('telefonoprove');
+        $proveedores->save();
+        return redirect('proveedor/lista');
+        
+    }
+    public function eliminar($Idproveedor){
+        $proveedor = Mproveedor::findOrFail($Idproveedor);
+        $proveedor->delete();
+        return redirect('proveedor/lista');
+        
     }
 }

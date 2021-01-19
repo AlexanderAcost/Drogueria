@@ -15,6 +15,7 @@
           <a class="dropdown-item" href="{{url('producto/formregistro')}}">Registrar</a>
           <a class="dropdown-item" href="{{url('producto/lista')}}">Listar</a>
           <a class="dropdown-item" href="{{url('producto/buscar')}}">Buscar</a>
+          <a class="dropdown-item" href="{{url('producto/formcategoria')}}">Registrar Categoria</a>
           <div class="dropdown-divider"></div>
           
         </div>

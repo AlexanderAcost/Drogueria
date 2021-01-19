@@ -28,8 +28,8 @@
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf
                                         <div class="login">
-                                            <div class="group"> <label for="email" class="label">Email</label> <input id="email" name="email"  type="email" class="input" placeholder="Escriba Su Correo" require> </div>
-                                            <div class="group"> <label for="password" class="label">Password</label> <input id="password" type="password" name="password" class="input" data-type="password" placeholder="Escriba Su Contraseña"> </div>
+                                            <div class="group"> <label for="email" class="label">Email</label> <input id="email" name="email"  type="email" class="input" placeholder="Escriba Su Correo" required> </div>
+                                            <div class="group"> <label for="password" class="label">Password</label> <input id="password" type="password" name="password" class="input" data-type="password" placeholder="Escriba Su Contraseña" required> </div>
                                             <div class="group"> <input id="remember_me" type="checkbox" name="remember" class="check" checked> <label for="remember_me"><span class="icon"></span> Recordarme</label> </div>
                                             <div class="group"> <input type="submit" class="button" value="Ingresar"> </div>
                                             <div class="hr"></div>
@@ -42,12 +42,24 @@
                                     <form method="POST" action="{{ route('register') }}">
                                         @csrf
                                         <div class="sign-up-form">
-                                            <div class="group"> <label for="name" class="label">Nombre</label> <input id="name" name="name" type="text" class="input" placeholder="Crea Un Nombre de Usuario"> </div>
-                                            <div class="group"> <label for="email" class="label">Email</label> <input id="email" name="email" type="email" class="input"  placeholder="Ingresa tu Correo"> </div>
-                                            <div class="group"> <label for="password" class="label">Contraseña</label> <input id="password" name="password" type="password" class="input" data-type="password" placeholder="contraseña"> </div>
-                                            <div class="group"> <label for="password_confirmation" class="label">Confirmar Contraseña</label> <input  id="password_confirmation" name="password_confirmation" type="password" data-type="password" class="input" placeholder="Confirmar Contraseña"> </div>
-                                            <div class="group"> <label for="tipopro" class="label">Tipo</label> <input  id="tipopro" name="tipopro" type="number" class="input"  value=1> </div>
-                                            <div class="group"> <input type="submit" class="button" value="Crear Cuenta"> </div>
+                                            <div class="group"> <label for="name" class="label">Nombre</label> <input id="name" name="name" type="text" class="input" placeholder="Crea Un Nombre de Usuario" required> </div>
+                                            <div class="group"> <label for="email" class="label">Email</label> <input id="email" name="email" type="email" class="input"  placeholder="Ingresa tu Correo" required> </div>
+                                            <div class="group"> <label for="password" class="label">Contraseña</label> <input id="password" name="password" type="password" class="input" data-type="password" placeholder="contraseña" required> </div>
+                                            <div class="group"> <label for="password_confirmation" class="label">Confirmar Contraseña</label> <input  id="password_confirmation" name="password_confirmation" type="password" data-type="password" class="input" placeholder="Confirmar Contraseña" required> </div>
+                                            
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text" for="tipopro">Tipo</label>   
+                                                </div>
+                                                <select class="custom-select" id="tipopro" name="tipopro" required>
+                                                    <option value="" disabled >Selecione una categoria</option>
+                                                    
+                                                    <option value="{{$tipos->id}}">{{$tipos->Direcciontipo}}</option>
+                                                    
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="group"> <input type="submit" class="button" value="Crear Cuenta" onclick="return validar()"> </div>
                                             <div class="hr"></div>
                                             <div class="foot"> <label for="tab-1">Ya tienes cuenta?</label> </div>
                                         </div>

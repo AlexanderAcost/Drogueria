@@ -19,9 +19,9 @@ use App\Http\Controllers\FACTURA\FacturaController;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+
+Route::get('/',[HomeController::class, 'inicio'])->middleware('auth');
+ 
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -41,12 +41,13 @@ Route::POST('producto/registro',[ProductoController::class, 'registro'])->middle
 Route::get('producto/lista',[ProductoController::class, 'listaproducto'])->middleware('auth');  //Lista
 //Route::get('producto/visualizar',[ProductoController::class, 'showClientes']);
 
-Route::get('producto/buscar',[ProductoController::class, 'formbuscar']);
-Route::POST('producto/buscar/',[ProductoController::class, 'buscar'])->middleware('auth');
+Route::get('producto/buscar',[ProductoController::class, 'formbuscar'])->middleware('auth');
+Route::POST('producto/buscar',[ProductoController::class, 'buscar'])->middleware('auth');
 
-Route::get('producto/actualizar/{id}', [ProductoController::class, 'formactualizar'])->middleware('auth');
-Route::post('producto/actualizar/{id}', [ProductoController::class, 'actualizar'])->middleware('auth');
+Route::get('producto/actualizar/{Idproducto}', [ProductoController::class, 'formactualizar'])->name('actualizarPro')->middleware('auth');
+Route::post('producto/actualizar/{Idproducto}', [ProductoController::class, 'actualizar'])->name('actualizarProducto')->middleware('auth');
 
+Route::get('producto/eliminar/{Idproducto}', [ProductoController::class, 'eliminar'])->name('eliminarProducto');
 //Proveedores
 Route::get('proveedor/formregistro',[ProveedorController::class, 'formproveedor'])->middleware('auth');//Lista
 Route::POST('proveedor/registro',[ProveedorController::class, 'registro'])->middleware('auth');//Lista
@@ -57,9 +58,10 @@ Route::get('proveedor/lista',[ProveedorController::class, 'listaproveedor'])->mi
 Route::get('proveedor/buscar',[ProveedorController::class, 'formbuscar'])->middleware('auth');
 Route::POST('proveedor/buscar',[ProveedorController::class, 'buscar'])->middleware('auth');
 
-Route::get('proveedor/actualizar/{id}', [ProveedorController::class, 'formactualizar'])->middleware('auth');
-Route::post('proveedor/actualizar/{id}', [ProveedorController::class, 'actualizar'])->middleware('auth');
+Route::get('proveedor/actualizar/{Idproveedor}', [ProveedorController::class, 'formactualizar'])->name('actualizarProve')->middleware('auth');
+Route::post('proveedor/actualizar/{Idproveedor}', [ProveedorController::class, 'actualizar'])->name('actualizarProveedor')->middleware('auth');
 
+Route::get('proveedor/eliminar/{Idproveedor}', [ProveedorController::class, 'eliminar'])->name('eliminarProductoProve');
 
 //FActura
 
@@ -77,3 +79,7 @@ Route::post('factura/actualizar/{id}', [FacturaController::class, 'actualizar'])
 
 //Items
 Route::get('item/lista/{idfac}',[ItemController::class, 'listaitem'])->middleware('auth');
+
+//Categoria
+Route::get('producto/formcategoria',[ProductoController::class, 'formcategoria'])->middleware('auth');//Lista
+Route::POST('producto/formcategoria',[ProductoController::class, 'regcategoria'])->middleware('auth');//Lista

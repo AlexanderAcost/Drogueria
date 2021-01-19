@@ -21,7 +21,7 @@ class ProductoController extends Controller
     }
     public function registro(Request $request){
         $producto = new Mproducto();
-        $producto->idcat = $request->input('categoria');
+        $producto->Idcat = $request->input('categoria');
         $producto->Nombrepro = $request->input('nompro');
         $producto->Descripcionpro = $request->input('descripcionpro');
         $producto->Marcapro = $request->input('marcapro');
@@ -46,19 +46,51 @@ class ProductoController extends Controller
         
     }
     public function buscar(Request $request){
-        $nombre = $request->input('nompro');
-       $producto = Mproducto::where('nompro', 'like',$nombre)->first();
-       if($producto)
-            return view('producto.vresbuscar', compact('producto'));
+        $nombre = $request->input('consultaPro');
+        $producto = Mproducto::join('categoria', 'Idcat', '=', 'Idcategoria')
+        ->where('Nombrepro', 'like',$nombre)->first();
+        if($producto)
+            
+            return view('producto.vresbuscar', ['producto' => $producto]);
         else
             return view('producto.vvacio');
         
     }
-    public function formactualizar(){
-        return view('producto.vformactualizar');
+    public function formactualizar($Idproducto){
+        $producto = Mproducto::findOrFail($Idproducto);
+        $categorias = Mcategoria::all();
+        return view('producto.vformactualizar', compact('producto','categorias'));
+        
     }
-    public function actualizar(){
-        return view('v');
+    public function actualizar(Request $request, $Idproducto){
+        $producto = Mproducto::findOrFail($Idproducto);
+        $producto->Idcat = $request->input('categoria');
+        $producto->Nombrepro = $request->input('nompro');
+        $producto->Descripcionpro = $request->input('descripcionpro');
+        $producto->Marcapro = $request->input('marcapro');
+        $producto->Presentacionpro = $request->input('prespro');
+        $producto->Cantidadpro = $request->input('cantidad');
+        $producto->Preciopro = $request->input('precio');
+        $producto->fotopro = $request->input('foto');
+        $producto->save();
+        return redirect('producto/lista');
+        
     }
-
+    public function eliminar($Idproducto){
+        $producto = Mproducto::findOrFail($Idproducto);
+        $producto->delete();
+        return redirect('producto/lista');
+        
+    }
+    public function formcategoria(){
+        return view('producto.vformcategoria');
+    }
+    public function regcategoria(Request $request){
+        $producto = new Mcategoria();
+        $producto->Idcategoria = $request->input('idcategoria');
+        $producto->Nombrecat = $request->input('nombre');
+        
+        $producto->save();
+        return redirect('producto/lista');
+    }
 }

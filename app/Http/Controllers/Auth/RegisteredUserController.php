@@ -10,6 +10,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+//Para hacer las consultas
+use Illuminate\Support\Facades\DB;
+
+//Para hacer  posible  registro
+use App\Models\Mtipo;
+
 class RegisteredUserController extends Controller
 {
     /**
@@ -19,7 +25,10 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('auth.login');
+        
+        $tipos = DB::table('tipo')->first();
+        return view('auth.login', ['tipos' => $tipos]);
+       
     }
 
     /**
@@ -42,7 +51,7 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'tipopro'=> $request->tipo,
+            'tipopro'=> $request->tipopro,
         ]));
 
         event(new Registered($user));

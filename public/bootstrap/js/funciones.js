@@ -6,3 +6,13 @@ function alerta(){
     }
 
 }
+
+function validar(){
+    
+    if(confirm("Confirme Para Registrar")){
+        return true;
+    }else{
+        return false;
+    }
+
+}

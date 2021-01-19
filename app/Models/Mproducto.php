@@ -10,4 +10,7 @@ class Mproducto extends Model
     use HasFactory;
 
     protected $table='producto';
+
+    protected $primaryKey = 'Idproducto';
+    
 }

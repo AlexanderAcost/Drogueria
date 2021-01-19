@@ -8,6 +8,13 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
+//Para hacer las consultas
+use Illuminate\Support\Facades\DB;
+
+//Para hacer  posible  registro
+use App\Models\Mtipo;
+
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -17,7 +24,9 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
-        return view('auth.login');
+        $tipos = DB::table('tipo')->first();
+        return view('auth.login', ['tipos' => $tipos]);
+        
     }
 
     /**

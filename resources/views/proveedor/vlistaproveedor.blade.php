@@ -1,6 +1,6 @@
 @extends('master')
 @section('contenido') 
-    <h1>Lista de  proveedor</h1>
+    <h1 class="text-center">Lista de  proveedor</h1>
     <div class="container">
         <table class="table table-dark table-striped">
             <thead>
@@ -26,6 +26,8 @@
                                     <h6 style="color: black;">Dirección: {{$p->Direccionprove}}</h6>
                                     <h6 style="color: black;">Correo: {{$p->Correoprove}}</h6>
                                     <h6 style="color: black;">Telefono: {{$p->Telefonoprove}}</h6>
+                                    <a href="{{route('actualizarProve', $p->Idproveedor)}}"  class="btn btn-success">Editar</a> 
+                                    <a href="{{route('eliminarProductoProve', $p->Idproveedor)}}"  class="btn btn-danger" onclick="return alerta()">Eliminar</a>
                                 </pre>
                                 </div>
                             </div>

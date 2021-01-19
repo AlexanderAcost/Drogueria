@@ -14,6 +14,7 @@
                 <th scope="col">Cantidad</th>
                 <th scope="col">Precio Unitario</th>
                 <th scope="col">Categoria</th>
+                <th scope="col">Más</th>
                 </tr>
             </thead>
             <tbody class="table-info">
@@ -25,7 +26,10 @@
                 <td> {{$p->Presentacionpro}}</td>
                 <td> {{$p->Cantidadpro}}</td>     
                 <td> {{$p->Preciopro}}</td>
-                <td> {{$p->Nombrecat}}</td>       
+                <td> {{$p->Nombrecat}}</td>  
+                <td> <a href="{{route('actualizarPro', $p->Idproducto)}}"  class="btn btn-success">Editar</a> 
+                     <a href="{{route('eliminarProducto', $p->Idproducto)}}"  class="btn btn-danger" onclick="return alerta()">Eliminar</a>
+                </td>     
                 </tr>
                 @endforeach
             </tbody>
