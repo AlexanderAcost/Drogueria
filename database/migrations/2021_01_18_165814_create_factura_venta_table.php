@@ -20,7 +20,7 @@ class CreateFacturaVentaTable extends Migration
             $table->date('Fechafacven');                    
             $table->float('Totalfacven'); 
 
-            
+            $table->foreign('Idpersona')->references('id')->on('users');
             $table->timestamps();
         });
     }
